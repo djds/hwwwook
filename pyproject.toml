@@ -1,0 +1,51 @@
+[project]
+name = "hwwwook"
+description = "Build a hugo static website with a Gitolite hook"
+dynamic = [
+    "version",
+]
+requires-python = ">=3.10"
+authors = [
+    {email = "git@djds.dev"},
+    {name = "Davis Schirmer"},
+]
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+]
+
+[build-system]
+requires = [
+    "setuptools",
+    "setuptools_scm[toml]",
+    "wheel",
+]
+
+[tool.setuptools_scm]
+
+[tool.black]
+line-length = 79
+target-version = [
+    "py310",
+]
+
+[tool.isort]
+line_length = 79
+profile = "black"
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+no_implicit_reexport = true
+show_error_context = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true

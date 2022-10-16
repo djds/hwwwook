@@ -1,0 +1,5 @@
+# https://github.com/pypa/setuptools_scm/issues/190
+exclude .containerignore
+exclude Containerfile
+exclude Makefile
+exclude examples
