@@ -16,6 +16,6 @@ if __name__ == "__main__":
         ssl_version=TLSVersion.TLSv1_3,
         ssl_keyfile=environ.get("SSL_KEYFILE"),
         ssl_certfile=environ.get("SSL_CERTFILE"),
-        ssl_cert_reqs=0,
+        ssl_cert_reqs=1,
         ssl_ca_certs=environ.get("SSL_CA_CERTS"),
     )
