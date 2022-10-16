@@ -26,10 +26,11 @@ RUN apk upgrade --no-cache \
 
 ENV VIRTUAL_ENV="/opt/venv"
 
+COPY . /src/
+
 WORKDIR /src
 
-RUN --mount=type=bind,source=.,target=/src,readwrite \
-    python3 -m venv "${VIRTUAL_ENV}" \
+RUN python3 -m venv "${VIRTUAL_ENV}" \
     && . "${VIRTUAL_ENV}/bin/activate" \
     && pip install -U pip \
     && pip install -U build \
