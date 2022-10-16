@@ -38,7 +38,7 @@ def build(
     if source is None:
         source = cwd
     if destination is None:
-        destination = cwd
+        destination = f"{cwd}/public"
 
     return run(
         ["hugo", "--source", source, "--destination", destination],
