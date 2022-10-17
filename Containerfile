@@ -8,9 +8,7 @@ RUN apk upgrade --update-cache \
 
 WORKDIR /src/hugo
 
-#ENV CC=clang
-#ENV CXX=clang
-ENV CGO_ENABLED=1 
+ENV CGO_ENABLED=1
 
 RUN go build --tags extended
 
