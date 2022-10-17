@@ -2,7 +2,7 @@
 """Run the app with uvicorn"""
 
 from os import environ
-from ssl import TLSVersion
+from ssl import PROTOCOL_TLS_CLIENT
 
 import uvicorn  # type: ignore
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         api,
         host="0.0.0.0",
         port=8443,
-        ssl_version=TLSVersion.TLSv1_3,
+        ssl_version=PROTOCOL_TLS_CLIENT,
         ssl_keyfile=environ.get("SSL_KEYFILE"),
         ssl_certfile=environ.get("SSL_CERTFILE"),
         ssl_cert_reqs=1,
