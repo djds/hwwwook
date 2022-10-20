@@ -12,7 +12,7 @@ if __name__ == "__main__":
     uvicorn.run(
         api,
         host="0.0.0.0",
-        port=8443,
+        port=8000,
         ssl_version=PROTOCOL_TLS_CLIENT,
         ssl_keyfile=environ.get("SSL_KEYFILE"),
         ssl_certfile=environ.get("SSL_CERTFILE"),

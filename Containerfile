@@ -66,7 +66,7 @@ WORKDIR "/var/lib/hugo"
 
 USER _hugo
 
-EXPOSE 8443
+EXPOSE 8000
 
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 

@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-readonly SERVER='http://localhost:8443/gitolite'
+readonly SERVER='http://localhost:8000/gitolite'
 
 readonly REPOSITORY="${REPOSITORY:?}"
 readonly SOURCEPATH="${SOURCEPATH:?}"
