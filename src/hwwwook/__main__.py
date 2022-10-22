@@ -18,4 +18,5 @@ if __name__ == "__main__":
         ssl_certfile=environ.get("SSL_CERTFILE"),
         ssl_cert_reqs=1,
         ssl_ca_certs=environ.get("SSL_CA_CERTS"),
+        log_level="debug",
     )
