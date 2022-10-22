@@ -21,7 +21,7 @@ async def deploy_website(website: Website) -> dict[str, dict[str, str | int]]:
     try:
         git = clone(website.repository, website.sourcepath)
     except CalledProcessError:
-        git = pull(website.sourcepath)
+        git = pull(website.sourcepath, website.reset)
 
     hugo = build(website.sourcepath, website.target)
 
