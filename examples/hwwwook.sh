@@ -22,5 +22,5 @@ curl \
         \"repository\": \"${REPOSITORY}\",
         \"sourcepath\": \"${SOURCEPATH}\",
         \"target\": \"${TARGET}\",
-        \"reset\": true
+        \"reset\": false
     }" "${SERVER}"
