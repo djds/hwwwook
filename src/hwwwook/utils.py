@@ -2,7 +2,7 @@
 """A very simple webhook api - helper functions"""
 
 from os import getcwd
-from subprocess import CompletedProcess, run
+from subprocess import CalledProcessError, CompletedProcess, run
 from typing import Any
 
 
@@ -18,14 +18,21 @@ def clone(
     return run(args, check=True, capture_output=True)
 
 
-def pull(path: str, reset: bool = False) -> CompletedProcess[Any]:
+def pull(path: str, reset: bool, ref: str) -> CompletedProcess[Any]:
     """git pull or reset"""
-    if reset:
-        args = ["git", "-C", path, "reset", "--hard", "HEAD"]
-    else:
-        args = ["git", "-C", path, "pull"]
+    try:
+        command = run(
+            ["git", "-C", path, "pull"], check=True, capture_output=True
+        )
+    except CalledProcessError:
+        if reset:
+            command = run(
+                ["git", "-C", path, "reset", "--hard", ref],
+                check=True,
+                capture_output=True,
+            )
 
-    return run(args, check=True, capture_output=True)
+    return command
 
 
 def build(

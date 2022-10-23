@@ -15,3 +15,4 @@ class Website(BaseModel):
     sourcepath: str
     target: str
     reset: bool = False
+    ref: str = "HEAD"
