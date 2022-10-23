@@ -21,18 +21,17 @@ def clone(
 def pull(path: str, reset: bool, ref: str) -> CompletedProcess[Any]:
     """git pull or reset"""
     try:
-        command = run(
+        return run(
             ["git", "-C", path, "pull"], check=True, capture_output=True
         )
     except CalledProcessError:
         if reset:
-            command = run(
+            return run(
                 ["git", "-C", path, "reset", "--hard", ref],
                 check=True,
                 capture_output=True,
             )
-
-    return command
+        raise
 
 
 def build(
